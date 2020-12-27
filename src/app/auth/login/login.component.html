@@ -1,0 +1,36 @@
+
+<div class="bg-img">
+    <mat-card>
+        <div class="signtext">
+            Sign In
+        </div>
+        <div class="signhint">
+            Enter Your account detail below
+        </div>
+        <div class="main">
+            <form [formGroup]="loginForm" style="width: 100%;">
+                <div class="form-fields">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email Address</mat-label>
+                        <input type="email" matInput #email placeholder="email" formControlName="email">
+                        <mat-error>email is required</mat-error>
+                        <mat-hint align="end">{{email.value?.length || 0}}</mat-hint>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password </mat-label>
+                        <input matInput type="password" placeholder="password" #psw formControlName="password">
+                        <span matSuffix style="cursor: pointer;" routerLink="/forgot-password">
+                            Forgot password ?
+                        </span>
+                        <mat-error *ngIf="f.password.errors?.required">password is required</mat-error>
+                        <mat-error *ngIf="f.password.errors?.minlength">password must be 5 character long</mat-error>
+                        <mat-hint align="end">{{psw.value?.length || 0}}</mat-hint>
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" (click) = "login(loginForm.value)" [disabled]="!loginForm.valid">Get Started</button>
+                    <div class="CreateAccount">Don't have account ? <span routerLink="/register"
+                            style="cursor: pointer;">Create for free </span></div>
+                </div>
+            </form>
+        </div>
+    </mat-card>
+</div>

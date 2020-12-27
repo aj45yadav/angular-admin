@@ -1,0 +1,44 @@
+<div class="bg-img">
+    <mat-card>
+        <div class="signtext">
+            Register
+        </div>
+        <div class="signhint">
+            Enter Your account detail below
+        </div>
+        <div class="main">
+            <form [formGroup]="registerForm" style="width: 100%;">
+                <div class="form-fields">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email Address</mat-label>
+                        <input type="email" matInput #email placeholder="email" formControlName="email"
+                            autocomplete="off">
+                        <mat-error>email is required</mat-error>
+                        <mat-hint align="end">{{email.value?.length || 0}}</mat-hint>
+                    </mat-form-field>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Password </mat-label>
+                        <input matInput type="password" placeholder="password" #psw formControlName="password">
+                        <mat-error *ngIf="f.password.errors?.required">password is required</mat-error>
+                        <mat-error *ngIf="f.password.errors?.minlength">password must be 5 character long</mat-error>
+                        <mat-hint align="end">{{psw.value?.length || 0}}</mat-hint>
+                    </mat-form-field>
+
+                    <mat-form-field appearance="outline">
+                        <mat-label>Confirm Password </mat-label>
+                        <input matInput placeholder="confirm password" type="password" formControlName="confirmPassword"
+                            #confirmpsw>
+                        <mat-error *ngIf="f.confirmPassword.errors?.required">Confirm password is required</mat-error>
+                        <mat-error *ngIf="f.confirmPassword.errors?.mustMatch">Password and confirm password is not
+                            matching</mat-error>
+                        <mat-hint align="end">{{confirmpsw.value?.length || 0}}</mat-hint>
+                    </mat-form-field>
+                    <button mat-raised-button color="primary" [disabled]="!registerForm.valid"
+                        (click)="register(registerForm.value)">Submit</button>
+                    <div class="CreateAccount">Alreay have acount ?<span routerLink="" style="cursor: pointer;">Sign
+                            In</span></div>
+                </div>
+            </form>
+        </div>
+    </mat-card>
+</div>

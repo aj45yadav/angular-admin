@@ -1,0 +1,23 @@
+<!-- header Content start here -->
+<div class="header">
+    <div class="logo">
+        <a routerLink="">
+            Brand-Logo
+        </a>
+    </div>
+    <div class="perfonal-info">
+        <div class="profile-img">
+            <img class="media-md" src="../../../assets/images/dummyProf2.png" alt="profile-pic">
+        </div>
+        <div class="name-drop">
+            <button mat-button [matMenuTriggerFor]="menu">Ajay Yadav <i class="material-icons">
+                    keyboard_arrow_down
+                </i></button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    Log Out</button>
+            </mat-menu>
+        </div>
+    </div>
+</div>
+<!-- header contents ends here -->

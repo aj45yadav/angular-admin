@@ -1,0 +1,24 @@
+<div class="bg-img">
+    <mat-card>
+        <div class="signtext">
+            Forgot Password
+        </div>
+        <div class="signhint">
+            Enter recovery email below
+        </div>
+        <div class="main">
+            <form [formGroup]="forgotPsw" style="width: 100%;">
+            <div class="form-fields">
+                <mat-form-field appearance="outline">
+                    <mat-label>Email Address</mat-label>
+                    <input type="email" matInput #email placeholder="email" formControlName="email" autocomplete="off">
+                    <mat-error>email is required</mat-error>
+                    <mat-hint align="end">{{email.value?.length || 0}}</mat-hint>
+                </mat-form-field>
+                <button mat-raised-button color="primary" (click) = "forgotPswSubmit(forgotPsw.value)" [disabled] = "forgotPsw.invalid">Submit</button>
+                <div class="CreateAccount">Alreay have acount ?<span routerLink="" style="cursor: pointer;">Sign In</span></div>
+            </div>
+            </form>
+        </div>
+    </mat-card>
+</div>

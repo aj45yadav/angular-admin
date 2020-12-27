@@ -1,0 +1,73 @@
+.main {
+    display: flex;
+    justify-content: center;
+    padding: 25px 30px;
+}
+.form-fields {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.mat-card {
+    width: 380px;
+    height: auto;
+    padding: 35px 0 15px 0;
+    background: #E2F2FF;
+}
+.mat-card:not([class*=mat-elevation-z]) {
+    box-shadow: -8px 19px 28px -4px rgba(184,173,184,1);
+}
+.mat-raised-button {
+    font-size: 13px;
+    height: 50px;
+    color: aliceblue;
+}
+.checkbox {
+    margin-bottom: 20px;
+    color: #000000a1;
+    font-size: 14px;
+}
+.bg-img {
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-image: url('../../../assets/images/iron-man.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signtext {
+    display: flex;
+    justify-content: center;
+    font-size: 38px;
+    font-weight: 500;
+    line-height: 40px;
+    color: #000000a1;
+}
+.signhint{
+    display: flex;
+    justify-content: center;
+    line-height: 30px;
+    font-size: 15px;
+    color: #000000a1;
+}
+.CreateAccount {
+    display: flex;
+    justify-content: center;
+    font-size: 13px;
+    line-height: 45px;
+    color: #000000a1;
+}
+.logo {
+    margin: 2% 0 7% 7%;
+}

@@ -1,0 +1,40 @@
+<app-header></app-header>
+<mat-sidenav-container class="side-container" autosize>
+    <mat-sidenav #drawer class="example-sidenav" mode="side" [ngStyle]="{ 'width.em': sidenavWidth }" opened="true"
+        (mouseenter)="increase()" (mouseleave)="decrease()">
+        <mat-divider></mat-divider>
+        <mat-nav-list>
+            <a mat-list-item class="toggle-menu">
+                <mat-icon>menu</mat-icon>
+                <span *ngIf="sidenavWidth > 6">{{title}}</span>
+            </a>
+        </mat-nav-list>
+        <mat-divider></mat-divider>
+        <mat-nav-list>
+            <a mat-list-item routerLink="/admin/dashboard" routerLinkActive="router-link-active">
+                <mat-icon>dashboard</mat-icon>
+                <span *ngIf="sidenavWidth > 6">Dashboard</span>
+            </a>
+        </mat-nav-list>
+
+        <mat-divider></mat-divider>
+        <mat-nav-list>
+            <a mat-list-item routerLink="/admin/demo-component" routerLinkActive="router-link-active">
+                <mat-icon>dashboard</mat-icon>
+                <span *ngIf="sidenavWidth > 6">Demo Component</span>
+            </a>
+        </mat-nav-list>
+
+        <mat-divider></mat-divider>
+        <mat-nav-list>
+            <a mat-list-item routerLink="/">
+                <mat-icon>power_settings_new</mat-icon>
+                <span *ngIf="sidenavWidth > 6">Logout</span>
+            </a>
+        </mat-nav-list>
+        <mat-divider></mat-divider>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>

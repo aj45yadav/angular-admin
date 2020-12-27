@@ -1,0 +1,25 @@
+.side-container {
+    position: absolute;
+    top: 70px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #eee;
+  }
+  example-sidenav {
+    width: 200px  
+  }
+  .mat-icon {
+      width: 40px;
+  }
+  .mat-list-base {
+      padding-top: 0;
+  }
+  a.router-link-active {
+      color: turquoise;
+  }
+  a.toggle-menu {
+    padding: 7px 0 7px 0;
+    font-size: 20px;
+    font-weight: 500;
+  }
